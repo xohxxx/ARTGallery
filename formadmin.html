@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> RegistroAdmin </title>
+        <title> formadmin </title>
         <meta charset="utf-8">
         <meta name="author" content="formulario">
         <meta charset="utf-8">
@@ -67,35 +67,61 @@
         <hr>
         
         <br>        
-        <div class="container">
-            <div class="row">
-              <div class="col-md-6 offset-md-3">
-                <h2 class="titulo"> Registro </h2>
-                <div class="card my-5">
-        
-                  <form class="card-body cardbody-color p-lg-5">
-        
-                    <div class="text-center">
-                      <img src="login.jpg" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
-                        width="250px" alt="profile">
-                    </div>
-        
-                    <div class="mb-3">
-                      <input type="text" class="form-control" id="Username" aria-describedby="emailHelp"
-                        placeholder="Nombre o Email">
-                    </div>
-                    <div class="mb-3">
-                      <input type="password" class="form-control" id="password" placeholder="Contraseña">
-                    </div>
-                    <div id="emailHelp" class="form-text text-center mb-5 text-dark">
-                         <a href="formadmin.html" class="text-dark fw-bold"> LOGIN</a>
-                    </div>
-                  </form>
-                </div>
-        
-              </div>
+        <div class="popup" id="popup">
+            <div class="icon">
+                <i class="fas fa-check"></i>
             </div>
-          </div>
+            <p>Se ha iniciado la sesión correctamente</p>
+        </div>
+        
+        <script>
+            window.onload = function() {
+                var popup = document.getElementById("popup");
+                popup.classList.add("show");
+                setTimeout(function() {
+                    popup.classList.remove("show");
+                }, 2000);
+            };
+        </script>
+    
+        <div class="separacion">
+        </div>
+    
+        <div class="tabla-container">
+            <table>
+            <thead>
+                <tr>
+                <th>Seleccionar</th>
+                <th>Nombre de la persona</th>
+                <th>Nombre de la obra</th>
+                <th>Foto de la obra</th>
+                <th>Descripción de la obra</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" name="item1" /></td>
+                    <td>Salvador Dali</td>
+                    <td>La persistencia de la memoria</td>
+                    <td><img src="memoria.jpg" alt="Memoria" width="100" /></td>
+                  <td>La persistencia de la memoria, conocido también como Los relojes blandos​ o Los relojes derretidos, ​ es un cuadro del pintor español Salvador Dalí pintado en 1931.</td>
+                </tr>
+    
+                <tr>
+                <td><input type="checkbox" /></td>
+                <td>Leonardo da Vinci</td>
+                <td>La ultima cena</td>
+                <td><img src="ultimacena.jpg" alt="Ultima cena" width="100" /></td>
+                <td>La última cena es una pintura mural original de Leonardo da Vinci que muestra una estudiada representación de la reacción de los apóstoles ante el momento en que Jesús anuncia que será traicionado por uno de ellos.</td>
+                </tr>
+    
+            </tbody>
+            </table>
+            <div class="botones-container">
+                <button class="aprobar">Aprobar</button>
+                <button class="rechazar">Rechazar</button>
+            </div>
+        </div>
 
         <div class="container"></div>
         <section>Galeria ART</section>
