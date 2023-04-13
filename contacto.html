@@ -58,7 +58,7 @@
                 </form>
             </div>
 
-            <a class="nav-link" href="login.html"> 
+            <a class="nav-link" href="adminuser.html"> 
                 <img class="imgredonda" src="login.jpg" width="70px" class="d-block" alt="..."></a>
         </nav>
         <nav class="navbar navbar-light bg-light">
@@ -67,31 +67,30 @@
         <hr>
         
         <br>        
-        <form>
 
-            <center><textarea rows = "1" cols = "50" name = "description">
-               Nombre del autor...
-            </textarea>
-            <br>
-
-            <textarea rows = "1" cols = "50" name = "description">
-               Correo electronico...
-            </textarea>
-            <br>
-            <textarea rows = "2" cols = "50" name = "description">
-                Titulo de la obra...
-             </textarea>
-             <br>
-             <textarea rows = "5" cols = "50" name = "description">
-                Descripcion de la obra (dimension/tecnica)...
-             </textarea>
-             <br>
-            <input type = "file" name = "fileupload" accept = "image/*" />
-            <br>
-            <input type = "submit" name = "submit" value = "Subir" />
-            <input type = "reset" name = "reset"  value = "Cancelar" />
-
-        </form>
+        <div class="formulario-container"><center>
+            <form action="procesar-formulario.php" method="POST">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <br>
+                <label for="telefono">Número de teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+                <br>
+                <label for="email">Correo electrónico:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="duda">Tipo de duda:</label>
+                <input type="text" id="duda" name="duda" required>
+                <br>
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" required></textarea>
+                <br>
+                <label for="imagen1">Imagen (Opcional):</label>
+                <input type="file" id="imagen1" name="imagen1" accept="image/*" required>
+                <br>
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
 
         <div class="container"></div>
         <section>Galeria ART</section>
@@ -104,17 +103,13 @@
 			</div>
 			<div class="footer-left">
 				<p class="footer-links">
-					<a class="link-1" href="#">Home</a>
+					<a class="link-1" href="index ART.html">Home</a>
 
 					<a href="#">Blog</a>
 
-					<a href="#">Pricing</a>
-
 					<a href="#">About</a>
 
-					<a href="#">Faq</a>
-
-					<a href="formulario.html">Contact</a>
+					<a href="contacto.html">Contact</a>
 				</p>
 				<p>Company Name &copy; 2023</p>
 			</div>
