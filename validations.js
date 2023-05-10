@@ -1,29 +1,11 @@
-var Fn = {
-	// Valida el rut con su cadena completa "XXXXXXXX-X"
-	validaRut : function (rutCompleto) {
-		rutCompleto = rutCompleto.replace("‐","-");
-		if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
-			return false;
-		var tmp 	= rutCompleto.split('-');
-		var digv	= tmp[1]; 
-		var rut 	= tmp[0];
-		if ( digv == 'K' ) digv = 'k' ;
-		
-		return (Fn.dv(rut) == digv );
-	},
-	dv : function(T){
-		var M=0,S=1;
-		for(;T;T=Math.floor(T/10))
-			S=(S+T%10*(9-M++%6))%11;
-		return S?S-1:'k';
-	}
-}
+function validarEmail(elemento){
 
-
-$("#btnvalida").click(function(){
-	if (Fn.validaRut( $("#txt_rut").val() )){
-		$("#msgerror").html("El rut ingresado es válido");
+	var texto = document.getElementById(elemento.id).value;
+	var regex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}.){1,125}[A-Z]{2,63}$/i;
+  
+	if (!regex.test(texto)) {
+		document.getElementById("resultado").innerHTML = "Correo invalido";
 	} else {
-		$("#msgerror").html("El Rut no es válido");
+	  document.getElementById("resultado").innerHTML = "";
 	}
-});
+  }
