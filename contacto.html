@@ -68,28 +68,37 @@
         
         <br>        
 
-        <div class="formulario-container"><center>
-            <form action="procesar-formulario.php" method="POST">
-                <label for="nombre">Nombre completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-                <br>
-                <label for="telefono">Número de teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required>
-                <br>
-                <label for="email">Correo electrónico:</label>
-                <input type="email" id="email" name="email" required>
-                <br>
-                <label for="duda">Tipo de duda:</label>
-                <input type="text" id="duda" name="duda" required>
-                <br>
-                <label for="descripcion">Descripción:</label>
-                <textarea id="descripcion" name="descripcion" required></textarea>
-                <br>
-                <label for="imagen1">Imagen (Opcional):</label>
-                <input type="file" id="imagen1" name="imagen1" accept="image/*" required>
-                <br>
-                <input type="submit" value="Enviar">
-            </form>
+        <div class="formulario-container">
+            <form   method="POST" data-netlify="true" action="#">     
+                <div class= "mb-3">           
+                  <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com">
+                </div>
+     
+              
+                <div class="mb-3">            
+                  <input type="input" class="form-control" id="name" name="name" placeholder="Nombres">
+                </div>
+          
+    
+                <div class="mb-3">
+                  <input type="tel" class="form-control" name="phone" id="phone" placeholder="Teléfono">
+                </div>
+
+                <div class= "mb-3">           
+                    <input type="date" class="form-control" id="fecha" name="fecha" placeholder="fecha">
+                  </div>
+    
+              <div class="mb-3">       
+                <textarea class="form-control" name="message" id="message" rows="4"></textarea>
+              </div>
+              
+    
+              <div class="mb-3">
+                <button type="submit" class=" btn btn-primary w-100 fs-5">Enviar Mensaje</button>
+              </div>
+              
+              
+          </form>
         </div>
 
         <div class="container"></div>
