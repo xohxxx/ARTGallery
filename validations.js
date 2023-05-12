@@ -1,11 +1,14 @@
-function validarEmail(elemento){
-
-	var texto = document.getElementById(elemento.id).value;
-	var regex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}.){1,125}[A-Z]{2,63}$/i;
-  
-	if (!regex.test(texto)) {
-		document.getElementById("resultado").innerHTML = "Correo invalido";
+function validarEmail() {
+	// Obtener el valor del correo electrónico
+	var email = document.getElementById("email").value;
+	
+	// Expresión regular para validar el formato del correo electrónico
+	var expresion = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
+	
+	// Validar el correo electrónico
+	if (expresion.test(email)) {
+	  alert("El correo electrónico es válido");
 	} else {
-	  document.getElementById("resultado").innerHTML = "";
+	  alert("El correo electrónico no es válido");
 	}
   }

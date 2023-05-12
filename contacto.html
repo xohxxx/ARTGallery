@@ -10,6 +10,7 @@
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <link rel="stylesheet" href="./css.css">
         <link rel="icon" href="./logoART.jpg">
+        <script src="./validations.js"></script>
         
     
     </head>
@@ -69,7 +70,7 @@
         <br>        
 
         <div class="formulario-container">
-            <form   method="POST" data-netlify="true" action="#">     
+            <form   method="POST" data-netlify="true" action="./contacto.html">     
                 <div class= "mb-3">           
                   <input type="email" class="form-control" id="email" name="email" placeholder="nombre@ejemplo.com" required>
                 </div>
@@ -86,19 +87,58 @@
 
                 <div class= "mb-3">           
                     <input type="date" class="form-control" id="fecha" name="fecha" placeholder="fecha" required>
-                  </div>
+                </div>
+                
+                <h5>Formulario de selección de país</h5>
+             
+                <label for="country-select">País:</label>
+                <select id="country-select"></select>
+            
+
+            <script>
+             fetch('https://restcountries.com/v3.1/subregion/south%20America')
+                .then(response => response.json())
+                .then(data => {
+                 const countrySelect = document.getElementById('country-select');
+
+                 data.forEach(country => {
+                   const option = document.createElement('option');
+                      option.value = country.name.common;
+                   option.text = country.name.common;
+                      countrySelect.appendChild(option);
+                 });
+                 })
+                 .catch(error => {
+                   console.log('Error:', error);
+                 });
+            </script>
+                <div>
+                   <h5> Sexo:</h5>
+
+                <input type="radio" name="empleoactual" value="tiempocompleto"> Masculino<br>
+
+                <input type="radio" name="empleoactual" value="mediodia"> Femenino<br>
+
+            </div>
+            <div>
+                <h5> Idioma Hablado:</h5>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Español</label><br>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Ingles</label><br>
+                <input type="checkbox" id="cbox2" value="second_checkbox"> <label for="cbox2">Otro</label>   
+            </div>
     
-              <div class="mb-3">       
-                <textarea class="form-control" name="message" id="message" rows="4" required></textarea>
-              </div>
-              
+                <div class="mb-3">       
+                    <textarea class="form-control" name="message" id="message" rows="4" required></textarea>
+                </div>
+
     
-              <div class="mb-3">
-                <button type="submit" class=" btn btn-primary w-100 fs-5">Enviar Mensaje</button>
-              </div>
+                <div class="mb-3">
+                    <button type="submit" class=" btn btn-outline-success" onclick="validarEmail()">Enviar</button>
+                </div>
               
               
-          </form>
+            </form>
+
         </div>
 
         <div class="container"></div>

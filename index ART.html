@@ -65,7 +65,11 @@
             <h1 class="titulo">  </h1>
         </nav> 
         <hr>
-        
+        <h2>Precio de Bitcoin en dólares</h2>
+
+        <center><div id="price-container">
+        <p>Cargando...</p>
+        </div></center>
         <br>        
         <div class="container-fluid">
             <div class="row">
@@ -123,5 +127,20 @@
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
+        <script>
+            fetch('https://economia.awesomeapi.com.br/json/last/BTC-USD')
+              .then(response => response.json())
+              .then(data => {
+                const btcusd = data['BTCUSD'];
+                const price = btcusd['bid'];
+        
+                const priceContainer = document.getElementById('price-container');
+                priceContainer.innerHTML = 'Último precio de Bitcoin en dólares: ' + price;
+              })
+              .catch(error => {
+                const priceContainer = document.getElementById('price-container');
+                priceContainer.innerHTML = 'Error al obtener los datos: ' + error;
+              });
+          </script>
     </body>
 </html>
