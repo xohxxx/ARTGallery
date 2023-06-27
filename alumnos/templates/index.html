@@ -19,9 +19,9 @@
   
   
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="nav-link" href="index">
+            <a class="nav-link" href="{% url 'index' %}">
                 <img class="imgredonda" src="{% static 'IMG/logoART.jpg' %}" width="90px" class="d-block" alt="..."></a>
-            <a class="navbar-brand" class="nav-link" href="index"><h5> Galeria ART </h5></a>
+            <a class="navbar-brand" class="nav-link" href="{% url 'index' %}"><h5> Galeria ART </h5></a>
             <button class="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
@@ -36,7 +36,7 @@
                         id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">                   
                     <li class="nav-item">
-                        <a class="nav-link" href="galeria">
+                        <a class="nav-link" href="{% url 'galeria' %}">
                             <h5>Galeria </h5>
                         </a>
                     </li>
@@ -59,7 +59,7 @@
                 </form>
             </div>
 
-            <a class="nav-link" href="adminuser"> 
+            <a class="nav-link" href="{% url 'adminuser' %}"> 
                 <img class="imgredonda" src="{% static 'IMG/login.jpg' %}" width="70px" class="d-block" alt="..."></a>
         </nav>
         <nav class="navbar navbar-light bg-light">
@@ -80,19 +80,19 @@
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" data-interval="3000">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <a href="pintura1">
+                                <a href="{% url 'pintura1' %}">
                                 <center><img class="imgredonda" src="{% static 'IMG/adan.jpg' %}" width="60%" class="d-block" alt="...">
                                 </a>
                             </div>
                             <br>
                             <div class="carousel-item">
-                                <a href="pintura2">
+                                <a href="{% url 'pintura2' %}">
                                 <center><img class="imgredonda" src="{% static 'IMG/noche.jpg' %}" width="60%" class="d-block" alt="...">
                                 </a>
                             </div>
                             <br>
                             <div class="carousel-item">
-                                <a href="pintura3">
+                                <a href="{% url 'pintura3' %}">
                                 <center><img class="imgredonda" src="{% static 'IMG/cabezas.jpg' %}" width="60%" class="d-block" alt="...">
                                 </a>
                             </div>
@@ -106,16 +106,16 @@
         <section>Galeria ART</section>
 		<footer class="footer-distributed">
 			<div class="footer-right">
-				<a href="feriado"><i class="fa fa-facebook">Horario</i></a>
+				<a href="{% url 'feriado' %}"><i class="fa fa-facebook">Horario</i></a>
 				
 			</div>
 			<div class="footer-left">
 				<p class="footer-links">
-					<a class="link-1" href="index">Home</a>
+					<a class="link-1" href="{% url 'index' %}">Home</a>
 
 					
 
-					<a href="contacto">Contact</a>
+					<a href="{% url 'contacto' %}">Contact</a>
 				</p>
 				<p>ARTGallery &copy; 2023</p>
 			</div>
