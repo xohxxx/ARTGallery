@@ -29,7 +29,7 @@ def formulario(request):
 
 def galeria(request):
     context={}
-    return render(request, 'galeria.html', context)ç
+    return render(request, 'galeria.html', context)
 
 def login(request):
     context={}
