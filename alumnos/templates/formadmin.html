@@ -19,9 +19,9 @@
   
   
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="nav-link" href="index">
-                <img class="imgredonda" src="logoART.jpg" width="90px" class="d-block" alt="..."></a>
-            <a class="navbar-brand" class="nav-link" href="index"><h5> Galeria ART </h5></a>
+            <a class="nav-link" href="{% url 'index' %}">
+                <img class="imgredonda" src="{% static 'IMG/logoART.jpg' %}" width="90px" class="d-block" alt="..."></a>
+            <a class="navbar-brand" class="nav-link" href="{% url 'index' %}"><h5> Galeria ART </h5></a>
             <button class="navbar-toggler"
                     type="button"
                     data-toggle="collapse"
@@ -36,12 +36,12 @@
                         id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">                   
                     <li class="nav-item">
-                        <a class="nav-link" href="galeria">
+                        <a class="nav-link" href="{% url 'galeria' %}">
                             <h5>Galeria </h5>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contacto">
+                        <a class="nav-link" href="{% url 'contacto' %}">
                             <h5>Contacto </h5>
                         </a>
                     </li>
@@ -59,8 +59,8 @@
                 </form>
             </div>
 
-            <a class="nav-link" href="adminuser"> 
-                <img class="imgredonda" src="login.jpg" width="70px" class="d-block" alt="..."></a>
+            <a class="nav-link" href="{% url 'adminuser' %}"> 
+                <img class="imgredonda" src="{% static 'IMG/login.jpg' %}" width="70px" class="d-block" alt="..."></a>
         </nav>
         <nav class="navbar navbar-light bg-light">
             <h1 class="titulo">  </h1>
@@ -104,7 +104,7 @@
                     <td><input type="checkbox" name="item1" /></td>
                     <td>Salvador Dali</td>
                     <td>La persistencia de la memoria</td>
-                    <td><img src="memoria.jpg" alt="Memoria" width="100" /></td>
+                    <td><img src="{% static 'IMG/memoria.jpg' %}" alt="Memoria" width="100" /></td>
                   <td>La persistencia de la memoria, conocido también como Los relojes blandos​ o Los relojes derretidos, ​ es un cuadro del pintor español Salvador Dalí pintado en 1931.</td>
                 </tr>
     
@@ -112,7 +112,7 @@
                 <td><input type="checkbox" /></td>
                 <td>Leonardo da Vinci</td>
                 <td>La ultima cena</td>
-                <td><img src="ultimacena.jpg" alt="Ultima cena" width="100" /></td>
+                <td><img src="{% static 'IMG/ultimacena.jpg' %}" alt="Ultima cena" width="100" /></td>
                 <td>La última cena es una pintura mural original de Leonardo da Vinci que muestra una estudiada representación de la reacción de los apóstoles ante el momento en que Jesús anuncia que será traicionado por uno de ellos.</td>
                 </tr>
     
@@ -135,11 +135,11 @@
 			</div>
 			<div class="footer-left">
 				<p class="footer-links">
-					<a class="link-1" href="index">Home</a>
+					<a class="link-1" href="{% url 'index' %}">Home</a>
 
 					
 
-					<a href="contacto">Contact</a>
+					<a href="{% url 'contacto' %}">Contact</a>
 				</p>
 				<p>ARTGallery &copy; 2023</p>
 			</div>
